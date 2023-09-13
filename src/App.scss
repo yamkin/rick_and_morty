@@ -1,0 +1,138 @@
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  margin: 0 auto 10px;
+}
+
+.search__form {
+  margin-bottom: 5px;
+  width: 100%;
+  height: 40px;
+  position: relative;
+}
+
+.search__input {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  // background: #565758;
+  box-shadow: 1px 1px 5px -4px rgba(0, 0, 0, 0.15);
+  border: 1px solid #565758;
+  border-radius: 0.5rem;
+  outline: none;
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.87);
+    }
+}
+
+.autocompleate {
+  position: absolute;
+  left: 0;
+  top: 55px;
+  width: 100%;
+  border-radius: 0.5rem;
+  color: rgba(255, 255, 255, 0.87);
+  background: #565758;
+  box-shadow: 1px 1px 5px -4px rgba(0, 0, 0, 0.15);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  z-index: 1;
+  max-height: 240px;
+  height: auto;
+  overflow: auto;
+
+  &__item {
+    padding: 7px 20px;
+
+    &:hover {
+      background: rgb(180, 180, 180);
+      color: #565758;
+      cursor: pointer;
+      transition: cubic-bezier(1, 0, 0, 1) .3s all;
+    }
+  }
+}
+
+.main__content {
+  display: grid;
+  grid-template-columns: auto auto; 
+  grid-gap: 10px; 
+}
+
+
+.card {
+  width: 600px;
+  min-height: 120px;
+  display: flex;
+  overflow: hidden;
+  text-align: left;
+  background: #3c3e44 none repeat scroll 0 0;
+  border-radius: 0.5rem;
+  margin: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, .1), 0 2px 4px -1px rgba(0, 0, 0, .06);
+
+  .image-wrapper {
+    flex: 2 1;
+    width: 100%;
+  }
+}
+
+
+
+.card-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 1;
+  transition: opacity .5s ease 0s;
+  object-position: center center;
+  object-fit: cover;
+}
+
+.card-body {
+  flex: 3 1;
+  position: relative;
+  padding-left: 0.75rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.75rem;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-body p {
+  margin: 0 0 5px 0;
+}
+
+@media (max-width: 1024px) {
+  .main__content {
+    display: grid;
+    grid-template-columns: 1fr; 
+    grid-template-rows: auto auto;
+    grid-gap: 10px; 
+  }
+}
